@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.3"
+  },
+  "name": "website_authentication",
+  "version": "1.0.0",
+  "description": "website authentication tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb",
+    "expressjs",
+    "nodejs"
+  ],
+  "author": "owner",
+  "license": "ISC",
+  "github repository": "https://github.com/Shiham123/website_authentication.git",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
