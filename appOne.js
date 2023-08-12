@@ -30,19 +30,16 @@ app.post('/register', async (request, response) => {
 app.post('/login', async (request, response) => {
   try {
     const { email, password } = request.body;
-    const userFind = await userOneModal.findOne({ email, password });
-
-    if (userFind) {
-      response.status(200).json({ message: 'login complete' });
+    const user = await userOneModal.findOne({ email: email });
+    if (user && user.password === password) {
+      response.status(200).json({ status: 'valid user' });
     } else {
-      response.status(404).json({ message: 'login unsuccessful' });
+      response.status(404).json({ status: 'Not valid user' });
     }
   } catch (error) {
-    response.status(500).json({ message: 'login unsuccessful' });
+    response.status(500).json(error.message);
   }
 });
-
-app.post('/login', (request, response) => {});
 
 app.get('/', (request, response) => {
   response.status(200).json({ message: 'this is home routes' });
