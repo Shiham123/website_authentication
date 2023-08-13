@@ -25,7 +25,7 @@ app.post('/register', async (request, response) => {
   try {
     const { email: emailBody, password: passwordBody } = request.body;
 
-    bcrypt.hash(passwordBody, saltRounds, async (err, hash) => {
+    bcrypt.hash(passwordBody, saltRounds, async (error, hash) => {
       const newUser = new userThreeModal({
         email: emailBody,
         password: hash,
